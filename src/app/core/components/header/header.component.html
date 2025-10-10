@@ -1,0 +1,51 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-soft">
+  <nav class="container mx-auto px-4 md:px-6 lg:px-8 py-4">
+    <div class="flex justify-between items-center">
+      <button 
+        (click)="scrollTo('home')"
+        class="text-2xl font-bold text-gold hover:text-cyan transition-colors duration-300"
+      >
+        TM
+      </button>
+      
+      <ul class="hidden md:flex space-x-6 lg:space-x-8">
+        @for (item of menuItems; track item.sectionId) {
+          <li>
+            <button 
+              (click)="scrollTo(item.sectionId)"
+              class="text-text-main font-medium hover:text-gold transition-colors duration-300 relative group">
+              {{ item.label }}
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300"></span>
+            </button>
+          </li>
+        }
+      </ul>
+
+      <button 
+        (click)="toggleMobileMenu()"
+        class="md:hidden text-text-main hover:text-gold transition-colors"
+        aria-label="Menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    @if (mobileMenuOpen) {
+      <div class="md:hidden mt-4 pb-4 border-t border-text-main/10 pt-4">
+        <ul class="space-y-3">
+          @for (item of menuItems; track item.sectionId) {
+            <li>
+              <button 
+                (click)="scrollTo(item.sectionId); toggleMobileMenu()"
+                class="block w-full text-left text-text-main font-medium hover:text-gold transition-colors duration-300 py-2">
+                {{ item.label }}
+              </button>
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  </nav>
+</header>

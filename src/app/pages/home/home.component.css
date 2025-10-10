@@ -1,0 +1,197 @@
+/* Estilos personalizados para animações suaves */
+:host {
+  display: block;
+}
+
+/* Scroll suave entre seções */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Animações de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.02) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(11, 197, 234, 0.2);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(11, 197, 234, 0.4);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fade-in-slow {
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+/* Animações específicas para tecnologias */
+.tech-card-animated {
+  opacity: 0;
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.tech-tag {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: #1F2937;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(11, 197, 234, 0.3);
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  animation: bounceIn 0.6s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  border-color: #0BC5EA;
+  transform: scale(1.05) translateY(-2px);
+  background-color: rgba(11, 197, 234, 0.1);
+  color: #1F2937;
+  opacity: 1;
+  box-shadow: 
+    0 8px 20px rgba(11, 197, 234, 0.3),
+    0 0 0 1px rgba(11, 197, 234, 0.2);
+}
+
+.tech-tag:nth-child(even):hover {
+  border-color: #D4AF37;
+  background-color: rgba(212, 175, 55, 0.1);
+  color: #1F2937;
+  opacity: 1;
+  box-shadow: 
+    0 8px 20px rgba(212, 175, 55, 0.3),
+    0 0 0 1px rgba(212, 175, 55, 0.2);
+}
+
+/* Efeito de pulso nos ícones das categorias */
+.card .p-3 {
+  transition: all 0.3s ease;
+}
+
+.card:hover .p-3 {
+  transform: scale(1.1) rotate(3deg);
+}
+
+/* Animação de entrada para contadores */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.text-2xl, .text-3xl {
+  animation: countUp 1s ease-out;
+}
+
+/* Efeito de brilho no gradiente da linha */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.bg-gradient-to-r.from-gold.to-cyan {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+/* Hover effect nos cards principais */
+.card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(11, 197, 234, 0.1);
+}
+
+/* Animação de loading para as tags */
+@keyframes loadingPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Delays para animação escalonada */
+.tech-tag:nth-child(1) { animation-delay: 0.1s; }
+.tech-tag:nth-child(2) { animation-delay: 0.2s; }
+.tech-tag:nth-child(3) { animation-delay: 0.3s; }
+.tech-tag:nth-child(4) { animation-delay: 0.4s; }
+.tech-tag:nth-child(5) { animation-delay: 0.5s; }
+.tech-tag:nth-child(6) { animation-delay: 0.6s; }
+.tech-tag:nth-child(7) { animation-delay: 0.7s; }
+.tech-tag:nth-child(8) { animation-delay: 0.8s; }
+
+/* Garantir visibilidade após animação */
+.tech-tag.animation-complete {
+  opacity: 1 !important;
+}
+
+/* Estado padrão após carregamento */
+.tech-tag:not(:hover) {
+  opacity: 1;
+}
