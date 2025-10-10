@@ -25,7 +25,7 @@ export class HomeComponent {
       description:
         'Sistema desenvolvido para a Controladoria-Geral do Estado de Goiás (CGE) voltado à gestão e análise de riscos institucionais. No projeto, fui responsável pelo front e back-end completo, incluindo a criação de um diagrama Bowtie interativo, utilizado para mapear e visualizar riscos. O sistema integra módulos de avaliação, mitigação e monitoramento de riscos, proporcionando mais transparência e governança.',
       image: 'assets/images/iris.png',
-      link: 'https://www.iris.controladoria.go.gov.br/sign-in',
+      link: 'https://www.irishomolog.controladoria.go.gov.br/sign-in',
       technologies: ['Angular', 'TypeScript', 'Laravel', 'REST API', 'PostgreSQL'],
     },
     {
@@ -33,7 +33,7 @@ export class HomeComponent {
       description:
         'O SISPAC é um sistema corporativo do Governo de Goiás voltado à gestão documental e administrativa, permitindo o controle de processos e comunicações internas entre órgãos públicos. Participei na modernização de módulos e telas, otimizando a usabilidade e o desempenho do sistema.',
       image: 'assets/images/sispac.png',
-      link: 'https://www.sispac.go.gov.br/',
+      link: 'https://wwwhomolog.correicao.go.gov.br/',
       technologies: ['Angular', 'Laravel', 'MySQL', 'Bootstrap'],
     },
   ];
