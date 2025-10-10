@@ -1,8 +1,13 @@
 {
-  "version": 2,
+  "buildCommand": "ng build --configuration production",
+  "outputDirectory": "dist/browser",
+  "framework": null,
   "routes": [
     {
-      "src": "/(.*)",
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
       "dest": "/index.html"
     }
   ]
