@@ -1,51 +1,74 @@
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-soft">
-  <nav class="container mx-auto px-4 md:px-6 lg:px-8 py-4">
-    <div class="flex justify-between items-center">
-      <button 
-        (click)="scrollTo('home')"
-        class="text-2xl font-bold text-gold hover:text-cyan transition-colors duration-300"
-      >
-        TM
+<header
+  [class.scrolled]="isScrolled()"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+>
+  <div class="section-container">
+    <nav class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <button (click)="scrollTo('hero')" class="group flex items-center gap-2 cursor-pointer">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-surface-950 font-bold text-sm transition-transform duration-300 group-hover:scale-110">
+          TM
+        </div>
+        <span class="text-surface-200 font-semibold text-sm tracking-wide hidden sm:block group-hover:text-amber-400 transition-colors duration-300">
+          tiago.dev
+        </span>
       </button>
-      
-      <ul class="hidden md:flex space-x-6 lg:space-x-8">
-        @for (item of menuItems; track item.sectionId) {
-          <li>
-            <button 
-              (click)="scrollTo(item.sectionId)"
-              class="text-text-main font-medium hover:text-gold transition-colors duration-300 relative group">
-              {{ item.label }}
-              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300"></span>
-            </button>
-          </li>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-1">
+        @for (item of navItems; track item.id) {
+          <button
+            (click)="scrollTo(item.id)"
+            class="nav-link px-3 py-2 text-sm text-surface-400 hover:text-surface-100 transition-colors duration-300 rounded-lg hover:bg-surface-800/50 cursor-pointer"
+          >
+            {{ item.label }}
+          </button>
         }
-      </ul>
-
-      <button 
-        (click)="toggleMobileMenu()"
-        class="md:hidden text-text-main hover:text-gold transition-colors"
-        aria-label="Menu"
-      >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-
-    @if (mobileMenuOpen) {
-      <div class="md:hidden mt-4 pb-4 border-t border-text-main/10 pt-4">
-        <ul class="space-y-3">
-          @for (item of menuItems; track item.sectionId) {
-            <li>
-              <button 
-                (click)="scrollTo(item.sectionId); toggleMobileMenu()"
-                class="block w-full text-left text-text-main font-medium hover:text-gold transition-colors duration-300 py-2">
-                {{ item.label }}
-              </button>
-            </li>
-          }
-        </ul>
       </div>
-    }
-  </nav>
+
+      <!-- CTA + Mobile -->
+      <div class="flex items-center gap-3">
+        <a
+          href="https://www.linkedin.com/in/tiago-marques-1a4105254"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden md:inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-amber-400 border border-amber-500/30 rounded-lg hover:bg-amber-500/10 transition-all duration-300"
+        >
+          <span class="glow-dot"></span>
+          Disponível
+        </a>
+
+        <!-- Mobile toggle -->
+        <button
+          (click)="toggleMobile()"
+          class="md:hidden p-2 text-surface-400 hover:text-surface-200 transition-colors cursor-pointer"
+          aria-label="Menu"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            @if (isMobileMenuOpen()) {
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+            } @else {
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+            }
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (isMobileMenuOpen()) {
+    <div class="md:hidden border-t border-surface-800/50 bg-surface-950/95 backdrop-blur-2xl">
+      <div class="section-container py-4 space-y-1">
+        @for (item of navItems; track item.id) {
+          <button
+            (click)="scrollTo(item.id)"
+            class="block w-full text-left px-4 py-3 text-sm text-surface-400 hover:text-surface-100 hover:bg-surface-800/50 rounded-lg transition-all duration-300 cursor-pointer"
+          >
+            {{ item.label }}
+          </button>
+        }
+      </div>
+    </div>
+  }
 </header>

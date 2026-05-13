@@ -1,701 +1,534 @@
 <app-header></app-header>
 
-<main class="pt-16">
-  <!-- Seção 1: Hero -->
-  <section id="home" class="min-h-screen flex items-center section-spacing">
-    <div class="container mx-auto px-4 md:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-16">
-        <div class="flex-1 animate-fade-in">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-text-main mb-4 leading-tight">
-            Olá, sou <span class="text-gold">Tiago Marques</span>
-          </h1>
-          <p class="text-lg md:text-xl text-text-main/80 mb-8 leading-relaxed">
-            Desenvolvedor Fullstack Web
-          </p>
-          <p class="text-base md:text-lg text-text-main/70 mb-8 leading-relaxed">
-            Desenvolvedor Fullstack com experiência em aplicações web modernas, apaixonado por
-            tecnologia, inovação e automação. Atualmente presto serviços para a Controladoria-Geral
-            do Estado de Goiás (CGE-GO), participando de projetos de gestão e monitoramento mas
-            sou contratado pela G4F.
-          </p>
+<main class="overflow-x-hidden">
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Background effects -->
+    <div class="absolute inset-0">
+      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[120px] animate-glow-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-amber-600/3 rounded-full blur-[100px] animate-glow-pulse" style="animation-delay: 1.5s"></div>
+      <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent"></div>
+    </div>
 
-          <div class="flex flex-wrap gap-4 mb-8">
-            <button (click)="scrollToProjects()" class="btn-primary">Ver Projetos</button>
-            <button (click)="scrollToContact()" class="btn-secondary">Entrar em Contato</button>
+    <!-- Grid pattern -->
+    <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+    <div class="section-container relative z-10 pt-24 pb-16">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Left: Content -->
+        <div class="hero-content space-y-8 opacity-0">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-900/80 border border-surface-800/50 rounded-full backdrop-blur-sm">
+            <span class="glow-dot"></span>
+            <span class="text-xs text-surface-400 font-medium tracking-wider uppercase">Disponível para projetos</span>
           </div>
 
-          <div class="flex gap-4">
-            <a
-              href="https://linkedin.com/in/tiago-marques-1a4105254/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-cyan hover:text-gold transition-colors duration-300 card-hover-lift"
-              aria-label="LinkedIn"
-            >
-              <svg class="icon-size-lg" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://github.com/tiagoKurt"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-cyan hover:text-gold transition-colors duration-300 card-hover-lift"
-              aria-label="GitHub"
-            >
-              <svg class="icon-size-lg" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                />
-              </svg>
-            </a>
+          <!-- Name -->
+          <div>
+            <h1 class="heading-xl mb-4">
+              Tiago<br>
+              <span class="text-gradient">Marques</span>
+            </h1>
+
+            <!-- Typing headline -->
+            <div class="h-8 flex items-center">
+              <span class="text-amber-400/80 font-mono text-sm md:text-base tracking-wide">
+                {{ typingText() }}<span class="typing-cursor">|</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <p class="body-lg max-w-lg">
+            Desenvolvedor Full Stack com experiência em
+            <span class="text-surface-200">sistemas governamentais de larga escala</span>.
+            Especialista em Angular, Laravel e arquitetura de software escalável.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-4">
+            <button (click)="scrollToSection('contact')" class="btn-primary group">
+              <span class="flex items-center gap-2">
+                Entre em contato
+                <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </span>
+            </button>
+            <button (click)="scrollToSection('projects')" class="btn-secondary">
+              Ver projetos
+            </button>
+          </div>
+
+          <!-- Stats -->
+          <div class="hero-stats flex gap-8 pt-4">
+            @for (stat of stats; track stat.label) {
+              <div class="text-center">
+                <div class="text-2xl md:text-3xl font-bold text-surface-100">{{ stat.value }}</div>
+                <div class="text-xs text-surface-500 mt-1 tracking-wide">{{ stat.label }}</div>
+              </div>
+            }
           </div>
         </div>
 
-        <div class="flex-1 flex justify-center animate-fade-in-slow">
+        <!-- Right: Photo -->
+        <div class="hero-photo flex justify-center lg:justify-end opacity-0">
           <div class="relative">
-            <div class="absolute inset-0 bg-gold/10 rounded-full blur-3xl"></div>
-            <img
-              src="assets/images/tiago.jpeg"
-              alt="Tiago Marques"
-              class="relative rounded-full w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover border-4 border-gold shadow-gold"
-            />
+            <!-- Glow rings -->
+            <div class="absolute -inset-4 bg-gradient-to-br from-amber-500/10 via-transparent to-amber-600/5 rounded-3xl blur-2xl"></div>
+            <div class="absolute -inset-1 bg-gradient-to-br from-amber-500/20 to-transparent rounded-2xl"></div>
+
+            <!-- Photo -->
+            <div class="relative rounded-2xl overflow-hidden border border-surface-800/50 w-full max-w-[380px] mx-auto lg:mx-0">
+              <img
+                src="assets/images/tigas_v2.jpg"
+                alt="Tiago Marques — Engenheiro de Software Full Stack"
+                class="w-full aspect-[3/4] object-cover"
+                loading="eager"
+              />
+              <!-- Overlay gradient -->
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-950/60 via-transparent to-transparent"></div>
+
+              <!-- Bottom info overlay -->
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-surface-950/90 to-transparent">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="glow-dot"></div>
+                  <span class="text-xs text-amber-400/80 font-medium">CGE-GO</span>
+                </div>
+                <p class="text-surface-300 text-sm">Engenheiro de Software</p>
+                <p class="text-surface-500 text-xs mt-1">Goiânia, GO — Brasil</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 animate-float">
+      <span class="text-[10px] text-surface-600 tracking-[0.2em] uppercase">Scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-amber-500/40 to-transparent"></div>
+    </div>
   </section>
 
-  <!-- Seção 2: Perfil Profissional -->
-  <section id="profile" class="section-spacing bg-white">
-    <div class="container mx-auto px-4 md:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-main mb-4">
-          Perfil Profissional
-        </h2>
-        <div class="w-20 h-1 bg-gold mx-auto"></div>
-      </div>
+  <!-- Section divider -->
+  <div class="divider-line"></div>
 
-      <div class="max-w-5xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
-          <div class="flex-1">
-            <p class="text-base md:text-lg text-text-main/80 leading-relaxed">
-              Sou Desenvolvedor Fullstack na G4F, atuando em sistemas corporativos e governamentais.
-              Tenho experiência em PHP (Laravel) e Angular, com conhecimentos sólidos em Java,
-              Spring Boot, SQL, TypeScript e TailwindCSS. Trabalho no desenvolvimento de interfaces
-              modernas, escaláveis e seguras, sempre com foco na experiência do usuário e nas boas
-              práticas de código. Além disso, desenvolvo APIs robustas e eficientes, garantindo
-              integração confiável entre sistemas e soluções completas de backend.
+  <!-- ═══════════════════════════════════════════
+       ABOUT SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="about" class="section-spacing relative">
+    <div class="section-container">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+        <!-- Left -->
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-px bg-amber-500/50"></div>
+            <span class="text-xs text-amber-400 font-medium tracking-[0.2em] uppercase">Sobre mim</span>
+          </div>
+          <h2 class="heading-lg mb-8">
+            Construindo sistemas que
+            <span class="text-gradient">fazem a diferença</span>
+          </h2>
+    <div class="space-y-5">
+            <p class="body-lg">
+              Engenheiro de Software e Desenvolvedor Full Stack com experiência no desenvolvimento de
+              sistemas institucionais para a
+              <span class="text-surface-200">Controladoria-Geral do Estado de Goiás</span>,
+              atuando diretamente em projetos utilizados por milhares de servidores públicos.
+            </p>
+
+            <p class="body-md">
+              Especializado na construção de aplicações escaláveis, seguras e performáticas,
+              combinando interfaces modernas com Angular e arquiteturas robustas utilizando Laravel.
+              Possuo forte foco em arquitetura de software, Clean Code, princípios SOLID e desenvolvimento
+              de soluções com alta manutenibilidade e confiabilidade.
+            </p>
+
+            <p class="body-md">
+              Graduado em Engenharia de Software pelo SENAI FATESG, mantenho evolução constante
+              em tecnologias, boas práticas e arquitetura de sistemas, buscando entregar soluções
+              de alto impacto para ambientes corporativos e governamentais.
             </p>
           </div>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="card card-hover-lift text-center">
-            <svg
-              class="w-12 h-12 mx-auto mb-4 text-gold"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-              />
-            </svg>
-            <h3 class="text-lg font-semibold text-text-main mb-2">Desenvolvimento Completo</h3>
-            <p class="text-text-main/70 text-sm">Sistemas completos (frontend + backend)</p>
-          </div>
-
-          <div class="card card-hover-lift text-center">
-            <svg
-              class="w-12 h-12 mx-auto mb-4 text-cyan"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"
-              />
-            </svg>
-            <h3 class="text-lg font-semibold text-text-main mb-2">Integração</h3>
-            <p class="text-text-main/70 text-sm">APIs e bancos de dados</p>
-          </div>
-
-          <div class="card card-hover-lift text-center">
-            <svg
-              class="w-12 h-12 mx-auto mb-4 text-gold"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-              />
-            </svg>
-            <h3 class="text-lg font-semibold text-text-main mb-2">Performance</h3>
-            <p class="text-text-main/70 text-sm">Otimização e acessibilidade</p>
-          </div>
-
-          <div class="card card-hover-lift text-center">
-            <svg
-              class="w-12 h-12 mx-auto mb-4 text-cyan"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-              />
-            </svg>
-            <h3 class="text-lg font-semibold text-text-main mb-2">Experiência</h3>
-            <p class="text-text-main/70 text-sm">Projetos públicos e privados</p>
-          </div>
+        <!-- Right: Highlights -->
+        <div class="space-y-4 reveal stagger-2">
+          @for (item of highlights; track item.title) {
+            <div class="glass-card p-5 flex gap-4 items-start reveal-scale">
+              <div class="text-2xl mt-0.5 flex-shrink-0 text-amber-500">
+                @if (item.icon === 'target') {
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5" /></svg>
+                }
+                @if (item.icon === 'architecture') {
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
+                }
+                @if (item.icon === 'evolution') {
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
+                }
+                @if (item.icon === 'leadership') {
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" /></svg>
+                }
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-surface-200 mb-1">{{ item.title }}</h3>
+                <p class="text-xs text-surface-500 leading-relaxed">{{ item.desc }}</p>
+              </div>
+            </div>
+          }
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Seção 3: Tecnologias -->
-  <section id="technologies" class="section-spacing bg-bg-main relative overflow-hidden">
-    <!-- Background decorativo -->
-    <div class="absolute inset-0 opacity-5">
-      <div
-        class="absolute top-10 left-10 w-32 h-32 bg-gold rounded-full blur-3xl animate-pulse"
-      ></div>
-      <div
-        class="absolute bottom-10 right-10 w-40 h-40 bg-cyan rounded-full blur-3xl animate-pulse"
-        style="animation-delay: 1s"
-      ></div>
-      <div
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gold rounded-full blur-2xl animate-pulse"
-        style="animation-delay: 2s"
-      ></div>
+  <div class="divider-line"></div>
+
+  <!-- ═══════════════════════════════════════════
+       EXPERIENCE SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="experience" class="section-spacing relative overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0">
+      <div class="absolute top-1/2 left-0 w-[300px] h-[300px] bg-amber-500/3 rounded-full blur-[100px]"></div>
     </div>
 
-    <div class="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-main mb-4 animate-fade-in">
-          Tecnologias e Ferramentas
-        </h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-gold to-cyan mx-auto mb-6 animate-pulse"></div>
-        <p
-          class="text-base md:text-lg text-text-main/70 max-w-2xl mx-auto animate-fade-in"
-          style="animation-delay: 0.2s"
-        >
-          Algumas das tecnologias e ferramentas que utilizo no meu dia a dia
-        </p>
-
-        <!-- Contador de tecnologias -->
-        <div class="mt-8 flex justify-center gap-8 animate-fade-in" style="animation-delay: 0.4s">
-          <div class="text-center">
-            <div class="text-2xl md:text-3xl font-bold text-gold">
-              {{ getTotalTechnologies() }}+
-            </div>
-            <div class="text-sm text-text-main/60">Tecnologias</div>
-          </div>
-          <div class="text-center">
-            <div class="text-2xl md:text-3xl font-bold text-cyan">5</div>
-            <div class="text-sm text-text-main/60">Categorias</div>
-          </div>
-        </div>
+    <div class="section-container relative z-10">
+      <div class="flex items-center gap-3 mb-6 reveal">
+        <div class="w-8 h-px bg-amber-500/50"></div>
+        <span class="text-xs text-amber-400 font-medium tracking-[0.2em] uppercase">Trajetória</span>
       </div>
+      <h2 class="heading-lg mb-16 reveal stagger-1">
+        Experiência <span class="text-gradient">Profissional</span>
+      </h2>
 
-      <div class="max-w-6xl mx-auto space-y-8">
-        <!-- Frontend -->
-        <div class="tech-card-animated" style="animation-delay: 0.1s">
-          <div class="card relative overflow-hidden group">
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-gold/5 to-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            ></div>
-            <div class="relative z-10">
-              <div class="flex items-center gap-4 mb-6">
-                <div class="p-3 bg-gradient-to-br from-gold to-gold-hover rounded-lg shadow-lg">
-                  <svg
-                    class="w-8 h-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-xl md:text-2xl font-bold text-gold">Frontend</h3>
-                  <p class="text-sm text-text-main/60">Interface & Experiência do Usuário</p>
-                </div>
-                <div class="ml-auto">
-                  <span class="px-3 py-1 bg-gold/10 text-gold rounded-full text-sm font-medium">
-                    {{ technologies.frontend.length }} techs
-                  </span>
-                </div>
-              </div>
-              <div class="flex flex-wrap gap-3">
-                @for (tech of technologies.frontend; track tech; let i = $index) {
-                <span class="tech-tag group/tag" [style.animation-delay]="i * 0.1 + 's'">
-                  <span class="relative z-10">{{ tech }}</span>
-                  <div
-                    class="absolute inset-0 bg-gradient-to-r from-gold to-cyan opacity-0 group-hover/tag:opacity-20 transition-opacity duration-300 rounded-lg"
-                  ></div>
-                </span>
+      <!-- Timeline -->
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500/30 via-surface-800 to-transparent"></div>
+
+        <div class="space-y-12">
+          @for (exp of experiences; track exp.company; let i = $index) {
+            <div class="relative pl-8 md:pl-20 reveal" [style.transition-delay]="(i * 0.15) + 's'">
+              <!-- Timeline dot -->
+              <div class="absolute left-0 md:left-8 top-1 transform -translate-x-1/2">
+                @if (exp.current) {
+                  <div class="glow-dot w-3 h-3"></div>
+                } @else {
+                  <div class="w-3 h-3 rounded-full border-2 border-surface-700 bg-surface-950"></div>
                 }
               </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Backend -->
-        <div class="tech-card-animated" style="animation-delay: 0.2s">
-          <div class="card relative overflow-hidden group">
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-cyan/5 to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            ></div>
-            <div class="relative z-10">
-              <div class="flex items-center gap-4 mb-6">
-                <div class="p-3 bg-gradient-to-br from-cyan to-blue-500 rounded-lg shadow-lg">
-                  <svg
-                    class="w-8 h-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"
-                    />
-                  </svg>
+              <div class="glass-card p-6 md:p-8">
+                <!-- Header -->
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+                  <div>
+                    <div class="flex items-center gap-3">
+                      <h3 class="heading-md">{{ exp.company }}</h3>
+                      @if (exp.current) {
+                        <span class="px-2 py-0.5 text-[10px] font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full">ATUAL</span>
+                      }
+                    </div>
+                    <p class="text-amber-400/80 text-sm font-medium mt-1">{{ exp.role }}</p>
+                  </div>
+                  <span class="text-xs text-surface-500 font-mono whitespace-nowrap">{{ exp.period }}</span>
                 </div>
-                <div>
-                  <h3 class="text-xl md:text-2xl font-bold text-cyan">Backend</h3>
-                  <p class="text-sm text-text-main/60">Servidor & Lógica de Negócio</p>
+
+                <!-- Details -->
+                <ul class="space-y-2 mb-5">
+                  @for (detail of exp.details; track detail) {
+                    <li class="flex items-start gap-2.5">
+                      <svg class="w-4 h-4 text-amber-500/50 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                      </svg>
+                      <span class="text-sm text-surface-400">{{ detail }}</span>
+                    </li>
+                  }
+                </ul>
+
+                <!-- Techs -->
+                <div class="flex flex-wrap gap-2">
+                  @for (tech of exp.techs; track tech) {
+                    <span class="tech-pill">{{ tech }}</span>
+                  }
                 </div>
-                <div class="ml-auto">
-                  <span class="px-3 py-1 bg-cyan/10 text-cyan rounded-full text-sm font-medium">
-                    {{ technologies.backend.length }} techs
-                  </span>
-                </div>
-              </div>
-              <div class="flex flex-wrap gap-3">
-                @for (tech of technologies.backend; track tech; let i = $index) {
-                <span class="tech-tag group/tag" [style.animation-delay]="i * 0.1 + 's'">
-                  <span class="relative z-10">{{ tech }}</span>
-                  <div
-                    class="absolute inset-0 bg-gradient-to-r from-cyan to-gold opacity-0 group-hover/tag:opacity-20 transition-opacity duration-300 rounded-lg"
-                  ></div>
-                </span>
-                }
               </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Database -->
-        <div class="tech-card-animated" style="animation-delay: 0.3s">
-          <div class="card relative overflow-hidden group">
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-gold/5 to-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            ></div>
-            <div class="relative z-10">
-              <div class="flex items-center gap-4 mb-6">
-                <div class="p-3 bg-gradient-to-br from-gold to-yellow-500 rounded-lg shadow-lg">
-                  <svg
-                    class="w-8 h-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-xl md:text-2xl font-bold text-gold">Banco de Dados</h3>
-                  <p class="text-sm text-text-main/60">Armazenamento & Persistência</p>
-                </div>
-                <div class="ml-auto">
-                  <span class="px-3 py-1 bg-gold/10 text-gold rounded-full text-sm font-medium">
-                    {{ technologies.database.length }} techs
-                  </span>
-                </div>
-              </div>
-              <div class="flex flex-wrap gap-3">
-                @for (tech of technologies.database; track tech; let i = $index) {
-                <span class="tech-tag group/tag" [style.animation-delay]="i * 0.1 + 's'">
-                  <span class="relative z-10">{{ tech }}</span>
-                  <div
-                    class="absolute inset-0 bg-gradient-to-r from-gold to-cyan opacity-0 group-hover/tag:opacity-20 transition-opacity duration-300 rounded-lg"
-                  ></div>
-                </span>
-                }
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- DevOps -->
-        <div class="tech-card-animated" style="animation-delay: 0.4s">
-          <div class="card relative overflow-hidden group">
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-cyan/5 to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            ></div>
-            <div class="relative z-10">
-              <div class="flex items-center gap-4 mb-6">
-                <div class="p-3 bg-gradient-to-br from-cyan to-teal-500 rounded-lg shadow-lg">
-                  <svg
-                    class="w-8 h-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                    />
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-xl md:text-2xl font-bold text-cyan">DevOps / Ferramentas</h3>
-                  <p class="text-sm text-text-main/60">Deploy & Infraestrutura</p>
-                </div>
-                <div class="ml-auto">
-                  <span class="px-3 py-1 bg-cyan/10 text-cyan rounded-full text-sm font-medium">
-                    {{ technologies.devops.length }} techs
-                  </span>
-                </div>
-              </div>
-              <div class="flex flex-wrap gap-3">
-                @for (tech of technologies.devops; track tech; let i = $index) {
-                <span class="tech-tag group/tag" [style.animation-delay]="i * 0.1 + 's'">
-                  <span class="relative z-10">{{ tech }}</span>
-                  <div
-                    class="absolute inset-0 bg-gradient-to-r from-cyan to-gold opacity-0 group-hover/tag:opacity-20 transition-opacity duration-300 rounded-lg"
-                  ></div>
-                </span>
-                }
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Outros -->
-        <div class="tech-card-animated" style="animation-delay: 0.5s">
-          <div class="card relative overflow-hidden group">
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-gold/5 to-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            ></div>
-            <div class="relative z-10">
-              <div class="flex items-center gap-4 mb-6">
-                <div class="p-3 bg-gradient-to-br from-gold to-orange-500 rounded-lg shadow-lg">
-                  <svg
-                    class="w-8 h-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-xl md:text-2xl font-bold text-gold">Outros</h3>
-                  <p class="text-sm text-text-main/60">Bibliotecas & Frameworks</p>
-                </div>
-                <div class="ml-auto">
-                  <span class="px-3 py-1 bg-gold/10 text-gold rounded-full text-sm font-medium">
-                    {{ technologies.others.length }} techs
-                  </span>
-                </div>
-              </div>
-              <div class="flex flex-wrap gap-3">
-                @for (tech of technologies.others; track tech; let i = $index) {
-                <span class="tech-tag group/tag" [style.animation-delay]="i * 0.1 + 's'">
-                  <span class="relative z-10">{{ tech }}</span>
-                  <div
-                    class="absolute inset-0 bg-gradient-to-r from-gold to-cyan opacity-0 group-hover/tag:opacity-20 transition-opacity duration-300 rounded-lg"
-                  ></div>
-                </span>
-                }
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Seção de destaque -->
-      <div class="mt-16 text-center animate-fade-in" style="animation-delay: 0.8s">
-        <div
-          class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold/10 to-cyan/10 rounded-full border border-gold/20"
-        >
-          <svg
-            class="w-5 h-5 text-gold animate-pulse"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 10V3L4 14h7v7l9-11h-7z"
-            />
-          </svg>
-          <span class="text-text-main font-medium">Sempre aprendendo novas tecnologias</span>
-          <svg
-            class="w-5 h-5 text-cyan animate-pulse"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 10V3L4 14h7v7l9-11h-7z"
-            />
-          </svg>
+          }
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Seção 4: Projetos -->
-  <section id="projects" class="section-spacing bg-white">
-    <div class="container mx-auto px-4 md:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-main mb-4">
-          Projetos em Destaque
-        </h2>
-        <div class="w-20 h-1 bg-gold mx-auto"></div>
-      </div>
+  <div class="divider-line"></div>
 
-      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        @for (project of projects; track project.title) {
-        <div class="card card-hover-lift">
-          <div class="mb-4 overflow-hidden rounded-lg">
-            <img
-              [src]="project.image"
-              [alt]="project.title"
-              class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
-            />
+  <!-- ═══════════════════════════════════════════
+       TECH STACK SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="stack" class="section-spacing relative">
+    <div class="section-container">
+      <div class="flex items-center gap-3 mb-6 reveal">
+        <div class="w-8 h-px bg-amber-500/50"></div>
+        <span class="text-xs text-amber-400 font-medium tracking-[0.2em] uppercase">Tecnologias</span>
+      </div>
+      <h2 class="heading-lg mb-4 reveal stagger-1">
+        Stack <span class="text-gradient">Tecnológica</span>
+      </h2>
+      <p class="body-md max-w-xl mb-16 reveal stagger-2">
+        Ferramentas e tecnologias que utilizo para construir soluções robustas e escaláveis.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        @for (category of techStack; track category.category; let i = $index) {
+          <div class="reveal" [style.transition-delay]="(i * 0.15) + 's'">
+            <div class="glass-card p-6 h-full">
+              <h3 class="text-xs font-semibold text-amber-400 tracking-[0.15em] uppercase mb-6">
+                {{ category.category }}
+              </h3>
+
+              <div class="space-y-5">
+                @for (tech of category.items; track tech.name; let j = $index) {
+                  <div class="group">
+                    <div class="flex items-center justify-between mb-2">
+                      <div class="flex items-center gap-2.5">
+                        <img [src]="tech.icon" [alt]="tech.name" class="w-5 h-5 object-contain" />
+                        <span class="text-sm text-surface-300 font-medium group-hover:text-surface-100 transition-colors duration-300">{{ tech.name }}</span>
+                      </div>
+                      <span class="text-xs text-surface-600 font-mono">{{ tech.level }}%</span>
+                    </div>
+                    <!-- Progress bar -->
+                    <div class="h-1 bg-surface-800 rounded-full overflow-hidden">
+                      <div
+                        class="progress-bar h-full rounded-full bg-gradient-to-r from-amber-500/60 to-amber-400/80 transition-all duration-1000 ease-out"
+                        [style.width]="tech.level + '%'"
+                        [style.transition-delay]="(j * 0.1) + 's'"
+                      ></div>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
           </div>
-          <h3 class="text-xl md:text-2xl font-bold text-gold mb-3">{{ project.title }}</h3>
-          <p class="text-text-main/80 mb-4 leading-relaxed">{{ project.description }}</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            @for (tech of project.technologies; track tech) {
-            <span class="px-3 py-1 bg-cyan/10 text-cyan text-sm rounded-md font-medium">
-              {{ tech }}
-            </span>
-            }
-          </div>
-          <a
-            [href]="project.link"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-cyan hover:text-gold transition-colors duration-300 font-semibold"
-          >
-            Ver Projeto
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
-          </a>
-        </div>
         }
       </div>
     </div>
   </section>
 
-  <!-- Seção 5: Formação -->
-  <section id="education" class="section-spacing bg-bg-main">
-    <div class="container mx-auto px-4 md:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-main mb-4">Formação</h2>
-        <div class="w-20 h-1 bg-gold mx-auto"></div>
-      </div>
+  <div class="divider-line"></div>
 
-      <div class="max-w-4xl mx-auto">
-        <div class="card card-hover-lift">
-          <div class="flex items-start gap-6">
-            <div class="hidden md:block">
-              <svg
-                class="w-16 h-16 text-gold"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 14l9-5-9-5-9 5 9 5z"
+  <!-- ═══════════════════════════════════════════
+       PROJECTS SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="projects" class="section-spacing relative overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0">
+      <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-amber-500/3 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="section-container relative z-10">
+      <div class="flex items-center gap-3 mb-6 reveal">
+        <div class="w-8 h-px bg-amber-500/50"></div>
+        <span class="text-xs text-amber-400 font-medium tracking-[0.2em] uppercase">Portfólio</span>
+      </div>
+      <h2 class="heading-lg mb-4 reveal stagger-1">
+        Projetos em <span class="text-gradient">Destaque</span>
+      </h2>
+      <p class="body-md max-w-xl mb-16 reveal stagger-2">
+        Sistemas reais em produção, utilizados por órgãos governamentais do Estado de Goiás.
+      </p>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        @for (project of projects; track project.title; let i = $index) {
+          <div class="reveal" [style.transition-delay]="(i * 0.15) + 's'">
+            <div class="glass-card overflow-hidden group h-full flex flex-col">
+              <!-- Image -->
+              <div class="relative overflow-hidden aspect-video">
+                <img
+                  [src]="project.image"
+                  [alt]="project.title"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                />
-              </svg>
-            </div>
-            <div class="flex-1">
-              <h3 class="text-2xl md:text-3xl font-bold text-text-main mb-2">
-                Bacharelado em Engenharia de Software
-              </h3>
-              <p class="text-gold font-semibold text-lg mb-2">Faculdade SENAI FATESG</p>
-              <p class="text-cyan font-medium mb-4">8º semestre • Conclusão prevista para 2025</p>
-              <p class="text-text-main/80 leading-relaxed">
-                Durante o curso, participei de projetos acadêmicos relevantes, como o Sistema ETL
-                com RabbitMQ, voltado ao processamento e comunicação eficiente de dados.
-              </p>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-950 via-surface-950/20 to-transparent"></div>
+
+                <!-- Role badge -->
+                <div class="absolute top-4 right-4">
+                  <span class="px-3 py-1 bg-surface-950/70 backdrop-blur-sm border border-surface-700/50 rounded-lg text-xs text-surface-300">
+                    {{ project.role }}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="p-6 flex-1 flex flex-col">
+                <h3 class="heading-md mb-3 group-hover:text-amber-400 transition-colors duration-300">{{ project.title }}</h3>
+                <p class="body-md text-sm flex-1 mb-5">{{ project.description }}</p>
+
+                <!-- Techs -->
+                <div class="flex flex-wrap gap-2 mb-5">
+                  @for (tech of project.technologies; track tech) {
+                    <span class="tech-pill">{{ tech }}</span>
+                  }
+                </div>
+
+                <!-- Link -->
+                <a
+                  [href]="project.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm text-amber-400/80 hover:text-amber-300 transition-colors duration-300 font-medium group/link"
+                >
+                  Ver projeto
+                  <svg class="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        }
       </div>
     </div>
   </section>
 
-  <!-- Seção 6: Contato -->
-  <section id="contact" class="section-spacing bg-white">
-    <div class="container mx-auto px-4 md:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-main mb-4">
-          Entre em Contato
-        </h2>
-        <div class="w-20 h-1 bg-gold mx-auto mb-6"></div>
-        <p class="text-base md:text-lg text-text-main/70 max-w-2xl mx-auto">
-          Estou sempre aberto a novas oportunidades e parcerias! Se quiser conversar sobre projetos,
-          colaborações ou ideias, entre em contato
-        </p>
+  <div class="divider-line"></div>
+
+  <!-- ═══════════════════════════════════════════
+       DIFFERENTIALS SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="differentials" class="section-spacing relative">
+    <div class="section-container">
+      <div class="flex items-center gap-3 mb-6 reveal">
+        <div class="w-8 h-px bg-amber-500/50"></div>
+        <span class="text-xs text-amber-400 font-medium tracking-[0.2em] uppercase">Diferenciais</span>
       </div>
+      <h2 class="heading-lg mb-4 reveal stagger-1">
+        Por que <span class="text-gradient">trabalhar comigo</span>
+      </h2>
+      <p class="body-md max-w-xl mb-16 reveal stagger-2">
+        Competências e diferenciais que trago para cada projeto e equipe.
+      </p>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-        <a
-          href="mailto:tiagomarques5672014@email.com"
-          class="card card-hover-lift text-center group"
-        >
-          <svg
-            class="w-12 h-12 mx-auto mb-4 text-cyan group-hover:text-gold transition-colors duration-300"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-            />
-          </svg>
-          <h3 class="text-lg font-semibold text-text-main mb-2">Email</h3>
-          <p class="text-text-main/70 text-sm break-all">tiagomarques5672014&#64;email.com</p>
-        </a>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (diff of differentials; track diff.title; let i = $index) {
+          <div class="reveal" [style.transition-delay]="(i * 0.1) + 's'">
+            <div class="glass-card p-6 h-full group">
+              <div class="text-3xl mb-4 transition-transform duration-300 group-hover:scale-110 text-amber-500">
+                @if (diff.icon === 'government') {
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>
+                }
+                @if (diff.icon === 'structure') {
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" /></svg>
+                }
+                @if (diff.icon === 'integration') {
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>
+                }
+                @if (diff.icon === 'performance') {
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+                }
+                @if (diff.icon === 'security') {
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+                }
+                @if (diff.icon === 'clean-code') {
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>
+                }
+              </div>
+              <h3 class="text-sm font-semibold text-surface-200 mb-2 group-hover:text-amber-400 transition-colors duration-300">{{ diff.title }}</h3>
+              <p class="text-xs text-surface-500 leading-relaxed">{{ diff.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
 
-        <a
-          href="https://linkedin.com/in/tiago-marques-1a4105254/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="card card-hover-lift text-center group"
-        >
-          <svg
-            class="w-12 h-12 mx-auto mb-4 text-cyan group-hover:text-gold transition-colors duration-300"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-            />
-          </svg>
-          <h3 class="text-lg font-semibold text-text-main mb-2">LinkedIn</h3>
-          <p class="text-text-main/70 text-sm">Conecte-se comigo</p>
-        </a>
+  <div class="divider-line"></div>
 
-        <a
-          href="https://github.com/tiagoKurt"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="card card-hover-lift text-center group"
-        >
-          <svg
-            class="w-12 h-12 mx-auto mb-4 text-cyan group-hover:text-gold transition-colors duration-300"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-            />
-          </svg>
-          <h3 class="text-lg font-semibold text-text-main mb-2">GitHub</h3>
-          <p class="text-text-main/70 text-sm">Veja meus projetos</p>
-        </a>
+  <!-- ═══════════════════════════════════════════
+       CONTACT SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="contact" class="section-spacing relative overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0">
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/3 rounded-full blur-[150px]"></div>
+    </div>
 
-        <div class="card text-center">
-          <svg
-            class="w-12 h-12 mx-auto mb-4 text-gold"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+    <div class="section-container relative z-10">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-3 mb-6 reveal">
+          <div class="w-8 h-px bg-amber-500/50"></div>
+          <span class="text-xs text-amber-400 font-medium tracking-[0.2em] uppercase">Contato</span>
+          <div class="w-8 h-px bg-amber-500/50"></div>
+        </div>
+
+        <h2 class="heading-lg mb-6 reveal stagger-1">
+          Vamos construir algo <span class="text-gradient">juntos</span>?
+        </h2>
+
+        <p class="body-md mb-12 reveal stagger-2">
+          Estou aberto a novas oportunidades, projetos freelance e colaborações.
+          Se você tem um desafio interessante, vamos conversar.
+        </p>
+
+        <!-- Contact cards -->
+        <div class="grid sm:grid-cols-3 gap-6 mb-12">
+          <a
+            href="mailto:lezzadogamer@gmail.com"
+            class="glass-card p-6 text-center group reveal stagger-3 block"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-            />
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-            />
-          </svg>
-          <h3 class="text-lg font-semibold text-text-main mb-2">Localização</h3>
-          <p class="text-text-main/70 text-sm">Goiânia - GO</p>
+            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-surface-800 border border-surface-700/50 flex items-center justify-center group-hover:border-amber-500/30 transition-all duration-300">
+              <svg class="w-5 h-5 text-surface-400 group-hover:text-amber-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-surface-200 mb-1">Email</h3>
+            <p class="text-xs text-surface-500">lezzadogamer&#64;gmail.com</p>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/tiago-marques-1a4105254"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="glass-card p-6 text-center group reveal stagger-4 block"
+          >
+            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-surface-800 border border-surface-700/50 flex items-center justify-center group-hover:border-amber-500/30 transition-all duration-300">
+              <svg class="w-5 h-5 text-surface-400 group-hover:text-amber-400 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-surface-200 mb-1">LinkedIn</h3>
+            <p class="text-xs text-surface-500">Conecte-se comigo</p>
+          </a>
+
+          <a
+            href="https://github.com/tiagoKurt"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="glass-card p-6 text-center group reveal stagger-5 block"
+          >
+            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-surface-800 border border-surface-700/50 flex items-center justify-center group-hover:border-amber-500/30 transition-all duration-300">
+              <svg class="w-5 h-5 text-surface-400 group-hover:text-amber-400 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-surface-200 mb-1">GitHub</h3>
+            <p class="text-xs text-surface-500">tiagoKurt</p>
+          </a>
+        </div>
+
+        <!-- Strong CTA -->
+        <div class="reveal stagger-5">
+          <a
+            href="mailto:lezzadogamer@gmail.com"
+            class="btn-primary inline-flex items-center gap-2 text-base px-10 py-4"
+          >
+            Iniciar conversa
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
         </div>
       </div>
     </div>

@@ -1,197 +1,132 @@
-/* Estilos personalizados para animações suaves */
+/* ═══════════════════════════════════════════
+   HOME COMPONENT — Premium Dark Styles
+   ═══════════════════════════════════════════ */
 :host {
   display: block;
 }
 
-/* Scroll suave entre seções */
+/* Smooth scroll offset for fixed header */
 section {
   scroll-margin-top: 80px;
 }
 
-/* Animações de entrada */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ─── Typing Cursor ─── */
+.typing-cursor {
+  animation: blink 1s step-end infinite;
+  color: rgba(212, 149, 43, 0.8);
+  font-weight: 300;
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.8) translateY(10px);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.02) translateY(-2px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+/* ─── Progress Bars ─── */
+.progress-bar {
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200px 0;
-  }
-  100% {
-    background-position: calc(200px + 100%) 0;
-  }
-}
-
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 4px 15px rgba(11, 197, 234, 0.2);
-  }
-  50% {
-    box-shadow: 0 6px 20px rgba(11, 197, 234, 0.4);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.animate-fade-in-slow {
-  animation: fadeInUp 1s ease-out 0.2s both;
-}
-
-/* Animações específicas para tecnologias */
-.tech-card-animated {
-  opacity: 0;
-  animation: slideInLeft 0.8s ease-out forwards;
-}
-
-.tech-tag {
-  padding: 0.5rem 1rem;
-  background-color: white;
-  color: #1F2937;
-  border-radius: 0.5rem;
-  border: 2px solid rgba(11, 197, 234, 0.3);
-  font-weight: 500;
-  cursor: pointer;
+/* ─── Glass Card Enhanced ─── */
+.glass-card {
   position: relative;
-  display: inline-block;
-  opacity: 0;
-  animation: bounceIn 0.6s ease-out forwards;
-  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
-.tech-tag:hover {
-  border-color: #0BC5EA;
-  transform: scale(1.05) translateY(-2px);
-  background-color: rgba(11, 197, 234, 0.1);
-  color: #1F2937;
-  opacity: 1;
-  box-shadow: 
-    0 8px 20px rgba(11, 197, 234, 0.3),
-    0 0 0 1px rgba(11, 197, 234, 0.2);
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 149, 43, 0.03),
+    transparent
+  );
+  transition: left 0.8s ease;
+  pointer-events: none;
 }
 
-.tech-tag:nth-child(even):hover {
-  border-color: #D4AF37;
-  background-color: rgba(212, 175, 55, 0.1);
-  color: #1F2937;
-  opacity: 1;
-  box-shadow: 
-    0 8px 20px rgba(212, 175, 55, 0.3),
-    0 0 0 1px rgba(212, 175, 55, 0.2);
+.glass-card:hover::before {
+  left: 150%;
 }
 
-/* Efeito de pulso nos ícones das categorias */
-.card .p-3 {
-  transition: all 0.3s ease;
+/* ─── Timeline ─── */
+.glow-dot {
+  position: relative;
 }
 
-.card:hover .p-3 {
-  transform: scale(1.1) rotate(3deg);
+.glow-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(212, 149, 43, 0.2);
+  animation: dotPulse 2s ease-in-out infinite;
 }
 
-/* Animação de entrada para contadores */
-@keyframes countUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.8);
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.5); opacity: 0; }
+}
+
+/* ─── Image hover parallax effect ─── */
+.group:hover img {
+  filter: brightness(1.05) contrast(1.02);
+}
+
+/* ─── Scroll indicator ─── */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* ─── Section backgrounds ─── */
+section {
+  position: relative;
+}
+
+/* ─── Hover states for tech pills in project cards ─── */
+.tech-pill {
+  cursor: default;
+}
+
+/* ─── Responsive adjustments ─── */
+@media (max-width: 768px) {
+  .hero-content {
+    text-align: center;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-content .inline-flex {
+    margin: 0 auto;
+  }
+
+  .hero-content .flex.flex-wrap {
+    justify-content: center;
+  }
+
+  .hero-content p {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
-.text-2xl, .text-3xl {
-  animation: countUp 1s ease-out;
+/* ─── Link hover enhancement ─── */
+a.group\/link:hover svg {
+  transform: translateX(4px);
 }
 
-/* Efeito de brilho no gradiente da linha */
-@keyframes gradientShift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.bg-gradient-to-r.from-gold.to-cyan {
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease-in-out infinite;
-}
-
-/* Hover effect nos cards principais */
-.card {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(11, 197, 234, 0.1);
-}
-
-/* Animação de loading para as tags */
-@keyframes loadingPulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-/* Delays para animação escalonada */
-.tech-tag:nth-child(1) { animation-delay: 0.1s; }
-.tech-tag:nth-child(2) { animation-delay: 0.2s; }
-.tech-tag:nth-child(3) { animation-delay: 0.3s; }
-.tech-tag:nth-child(4) { animation-delay: 0.4s; }
-.tech-tag:nth-child(5) { animation-delay: 0.5s; }
-.tech-tag:nth-child(6) { animation-delay: 0.6s; }
-.tech-tag:nth-child(7) { animation-delay: 0.7s; }
-.tech-tag:nth-child(8) { animation-delay: 0.8s; }
-
-/* Garantir visibilidade após animação */
-.tech-tag.animation-complete {
-  opacity: 1 !important;
-}
-
-/* Estado padrão após carregamento */
-.tech-tag:not(:hover) {
-  opacity: 1;
+/* ─── Focus states ─── */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgba(212, 149, 43, 0.5);
+  outline-offset: 2px;
+  border-radius: 8px;
 }
